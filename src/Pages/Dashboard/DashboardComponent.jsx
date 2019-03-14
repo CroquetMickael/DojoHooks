@@ -11,4 +11,11 @@ const DashboardComponent = () => (
   </AuthConsumer>
 );
 
-export default DashboardComponent;
+const DashboardComponentHooks = (props) => (
+  <div>
+    <p>DashBoard pages</p>
+    <button onClick={props.logout}>Logout !</button>
+  </div>
+);
+
+export { DashboardComponent, DashboardComponentHooks };

@@ -1,16 +1,17 @@
-// Do not touch this file
+// Modify this file when you want to change between class and Hooks
 import React from "react";
-import { ProtectedRoute, PublicRoute } from "./RouteConfig";
+import { ProtectedRoute, PublicRoute } from "./RouteConfigHooks";
 import { Router } from "@reach/router";
-import IndexPage from "../../Pages/Index/IndexComponent";
-import DashboardPage from "../../Pages/Dashboard/DashboardComponent";
-import { AuthProvider } from "../Context/Auth/AuthContextClass";
+import IndexPages from "../../Pages/Index/IndexContainerHooks";
+import DashBoardPages from "../../Pages/Dashboard/DashboardContainerHooks";
+import { AuthContextHooks } from "../Context/Auth/AuthContextHooks";
+
 const router = () => (
-  <AuthProvider>
+  <AuthContextHooks>
     <Router>
-      <PublicRoute component={IndexPage} path="/" />
-      <ProtectedRoute component={DashboardPage} path="dashboard" />
+      <PublicRoute component={IndexPages} path="/" />
+      <ProtectedRoute component={DashBoardPages} path="dashboard" />
     </Router>
-  </AuthProvider>
+  </AuthContextHooks>
 );
 export default router;

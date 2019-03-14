@@ -1,7 +1,7 @@
 // Get the Auth Consumer
 import React from "react";
 import { AuthConsumer } from "../../Common/Context/Auth/AuthContextClass";
-const IndexComponent = () => (
+const IndexComponentClass = () => (
   <AuthConsumer>
     {({ login }) => (
       <div>
@@ -12,4 +12,11 @@ const IndexComponent = () => (
   </AuthConsumer>
 );
 
-export default IndexComponent;
+const IndexComponentHooks = (props) => (
+  <div>
+    <p>Test</p>
+    <button onClick={props.login}>Login !</button>
+  </div>
+);
+
+export { IndexComponentClass, IndexComponentHooks };
