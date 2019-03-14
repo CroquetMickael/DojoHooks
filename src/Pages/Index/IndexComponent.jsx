@@ -1,9 +1,15 @@
-import React from 'react'
-
+// Get the Auth Consumer
+import React from "react";
+import { AuthConsumer } from "../../Common/Context/Auth/AuthContextClass";
 const IndexComponent = () => (
-<div>
-    <p>Test</p>
-</div>
+  <AuthConsumer>
+    {({ login }) => (
+      <div>
+        <p>Test</p>
+        <button onClick={login}>Login !</button>
+      </div>
+    )}
+  </AuthConsumer>
 );
 
-export default IndexComponent
+export default IndexComponent;
