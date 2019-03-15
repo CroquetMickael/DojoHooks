@@ -7,14 +7,20 @@ const AuthContext = React.createContext();
 
 const AuthContextHooks = (props) => {
   const [isAuth, setIsAuth] = useState(false);
+  const [callback, setCallback] = useState("");
 
-  const login = () => {
-    setIsAuth(true);
-    navigate("/dashboard");
+  const login = (username, password) => {
+    if (username === "Hooks" && password === "Awesome") {
+      setIsAuth(true);
+      navigate("/dashboard");
+    } else {
+      setCallback("Mauvais login/mot de passe");
+    }
   };
 
   const logout = () => {
     setIsAuth(false);
+    setCallback("Vous avez été déconnecté");
     navigate("/");
   };
 
@@ -23,7 +29,8 @@ const AuthContextHooks = (props) => {
       value={{
         isAuth: isAuth,
         login: login,
-        logout: logout
+        logout: logout,
+        callback: callback
       }}
     >
       {props.children}

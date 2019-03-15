@@ -4,15 +4,19 @@ import { navigate } from "@reach/router";
 const AuthContext = React.createContext();
 
 class AuthProvider extends React.Component {
-  state = { isAuth: false };
+  state = { isAuth: false, callback: "" };
 
-  login = () => {
-    this.setState({ isAuth: true });
-    navigate("/dashboard");
+  login = (username, password) => {
+    if (username === "Hooks" && password === "Awesome") {
+      this.setState({ isAuth: false });
+      navigate("/dashboard");
+    } else {
+      this.setState({ callback: "Mauvais login/mot de passe" });
+    }
   };
 
   logout = () => {
-    this.setState({ isAuth: false });
+    this.setState({ isAuth: false, callback: "Vous avez été déconnecté" });
     navigate("/");
   };
 

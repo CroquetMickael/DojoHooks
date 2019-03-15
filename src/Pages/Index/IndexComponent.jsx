@@ -3,9 +3,10 @@ import React from "react";
 import { AuthConsumer } from "../../Common/Context/Auth/AuthContextClass";
 const IndexComponentClass = () => (
   <AuthConsumer>
-    {({ login }) => (
+    {({ login, callback }) => (
       <div>
         <p>Test</p>
+        <p>{callback}</p>
         <button onClick={login}>Login !</button>
       </div>
     )}
@@ -15,6 +16,7 @@ const IndexComponentClass = () => (
 const IndexComponentHooks = (props) => (
   <div>
     <p>Test</p>
+    <p>{props.callback}</p>
     <button onClick={props.login}>Login !</button>
   </div>
 );

@@ -1,5 +1,6 @@
 import React from "react";
 import { AuthConsumer } from "../../Common/Context/Auth/AuthContextClass";
+// Do not modify these files
 const DashboardComponent = () => (
   <AuthConsumer>
     {({ logout }) => (
@@ -11,6 +12,7 @@ const DashboardComponent = () => (
   </AuthConsumer>
 );
 
+// Use it when you've create the Dashboard Container Hooks
 const DashboardComponentHooks = (props) => (
   <div>
     <p>DashBoard pages</p>
