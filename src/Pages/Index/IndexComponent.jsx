@@ -1,32 +1,17 @@
 // Get the Auth Consumer
 import React from "react";
-import { AuthConsumer } from "../../Common/Context/Auth/AuthContextClass";
 import InputText from "../../Component/Input/InputComponent";
-const IndexComponentClass = props => (
-  <AuthConsumer>
-    {({ login, callback }) => (
-      <div>
-        <p>Test</p>
-        <p>{callback}</p>
-        <InputText
-          name={"username"}
-          value={props.username}
-          handler={props.setUsername}
-        />
-        <InputText
-          name={"password"}
-          value={props.password}
-          handler={props.setPassword}
-        />
-        <button onClick={login}>Login !</button>
-      </div>
-    )}
-  </AuthConsumer>
-);
 
-const IndexComponentHooks = props => (
-  <div>
-    <p>Test</p>
+const IndexComponent = (props) => (
+  <div className="container">
+    <h1>Login Page</h1>
+    <blockquote>
+      <p>
+        <em>Login: Hooks</em>
+        <br />
+        <em>Password: Awesome</em>
+      </p>
+    </blockquote>
     <p>{props.callback}</p>
     <InputText
       name={"username"}
@@ -38,10 +23,13 @@ const IndexComponentHooks = props => (
       value={props.password}
       handler={props.setPassword}
     />
-    <button onClick={() => props.login(props.username, props.password)}>
+    <button
+      className="button-outline"
+      onClick={() => props.login(props.username, props.password)}
+    >
       Login !
     </button>
   </div>
 );
 
-export { IndexComponentClass, IndexComponentHooks };
+export default IndexComponent;

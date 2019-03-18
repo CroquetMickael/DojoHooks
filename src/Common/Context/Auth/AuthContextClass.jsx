@@ -8,7 +8,7 @@ class AuthProvider extends React.Component {
 
   login = (username, password) => {
     if (username === "Hooks" && password === "Awesome") {
-      this.setState({ isAuth: false });
+      this.setState({ isAuth: true });
       navigate("/dashboard");
     } else {
       this.setState({ callback: "Mauvais login/mot de passe" });
@@ -26,7 +26,8 @@ class AuthProvider extends React.Component {
         value={{
           isAuth: this.state.isAuth,
           login: this.login,
-          logout: this.logout
+          logout: this.logout,
+          callback: this.state.callback
         }}
       >
         {this.props.children}

@@ -1,6 +1,6 @@
 // Implements the IndexContainerClass with the Hooks here
 import React, { useContext, useState } from "react";
-import { IndexComponentHooks } from "./IndexComponent";
+import IndexComponent from "./IndexComponent";
 import { AuthContext } from "../../Common/Context/Auth/AuthContextHooks";
 const IndexContainerHooks = () => {
   const authConsumer = useContext(AuthContext);
@@ -15,7 +15,7 @@ const IndexContainerHooks = () => {
     setPassword
   };
 
-  return <IndexComponentHooks {...props} />;
+  return <IndexComponent {...props} />;
 };
 
 export default IndexContainerHooks;
