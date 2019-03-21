@@ -1,7 +1,6 @@
-// Get the Auth Consumer
 import React from "react";
 import InputText from "../../Component/Input/InputComponent";
-
+// Do not modify this files
 const IndexComponent = (props) => (
   <div className="container">
     <h1>Login Page</h1>
@@ -14,11 +13,13 @@ const IndexComponent = (props) => (
     </blockquote>
     <p>{props.callback}</p>
     <InputText
+      type={"text"}
       name={"username"}
       value={props.username}
       handler={props.setUsername}
     />
     <InputText
+      type={"password"}
       name={"password"}
       value={props.password}
       handler={props.setPassword}

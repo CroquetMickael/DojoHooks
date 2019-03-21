@@ -1,5 +1,5 @@
 import React from "react";
-// Do not modify these files
+// Do not modify this files
 const DashboardComponent = (props) => (
   <div className="container">
     <h1>Dashboard Page</h1>
