@@ -1,5 +1,5 @@
 // Modify this file when you want to change between class and Hooks
-// You should thus change the Import
+// You should change these Import
 import React from "react";
 import { ProtectedRoute, PublicRoute } from "./RouteConfig";
 import { Router } from "@reach/router";
